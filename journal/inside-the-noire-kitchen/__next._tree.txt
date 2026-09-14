@@ -1,0 +1,6 @@
+:HL["/noire/_next/static/chunks/1cg4v3lalms01.css","style"]
+:HL["/noire/_next/static/media/16e0e94777d7bd9f-s.p.2fp922fonczfn.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/noire/_next/static/media/2321eaaa64c56acd-s.p.1jcqb22v1pf1v.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/noire/_next/static/media/5efd72c5696b62e7-s.p.00gsdi6kul_gu.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/noire/_next/static/media/ceb2fe9e3d9c2d4b-s.p.08y1ovmt42mb_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4180,"slots":{"children":{"name":"journal","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"inside-the-noire-kitchen","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"dOQ687Qogc0rr5wUa_rB8"}
