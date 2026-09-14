@@ -39,7 +39,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             >
               <TransitionLink
                 href={item.href}
-                className="display type-page block text-ivory"
+                className="display block text-[clamp(1.6rem,7vw,2.4rem)] text-ivory"
                 tabIndex={open ? 0 : -1}
                 onClick={onClose}
               >

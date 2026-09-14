@@ -8,20 +8,30 @@ import { useLocale } from "@/lib/locale";
 export function EventsPreview() {
   const { locale } = useLocale();
   return (
-    <section className="py-[var(--space-section)]">
-      <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+    <section className="border-y border-line py-12 md:py-14">
+      <Container className="grid gap-10 md:grid-cols-2 md:items-end">
         <div>
-          <p className="eyebrow">07</p>
-          <h2 className="display mt-4 text-[clamp(2.4rem,7vw,5.5rem)] text-ivory">
-            {t(copy.pages.events.title, locale)}
-          </h2>
-          <p className="mt-6 max-w-md text-[1rem] leading-8 text-stone">
+          <p className="eyebrow">{t(copy.pages.events.title, locale)}</p>
+          <p className="mt-4 max-w-md type-body">
             {t(copy.pages.events.lead, locale)}
           </p>
+          <div className="mt-6">
+            <MagneticButton href="/events">
+              {t(copy.pages.events.cta, locale)} →
+            </MagneticButton>
+          </div>
         </div>
-        <MagneticButton href="/events" variant="solid">
-          {t(copy.pages.events.cta, locale)} →
-        </MagneticButton>
+        <div>
+          <p className="eyebrow">{t(copy.ui.reserve, locale)}</p>
+          <p className="mt-4 max-w-md type-body">
+            {t(copy.reserveCta.body, locale)}
+          </p>
+          <div className="mt-6">
+            <MagneticButton href="/reserve" variant="solid">
+              {t(copy.hero.cta, locale)} →
+            </MagneticButton>
+          </div>
+        </div>
       </Container>
     </section>
   );

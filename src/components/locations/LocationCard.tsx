@@ -19,7 +19,7 @@ export function LocationCard({ locale, venue, selected, onSelect }: LocationCard
   return (
     <article
       className={cn(
-        "grid gap-10 border-t border-line py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end",
+        "grid gap-8 border-t border-line py-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end",
         selected && "opacity-100",
         !selected && onSelect ? "opacity-55" : "",
       )}
@@ -27,11 +27,11 @@ export function LocationCard({ locale, venue, selected, onSelect }: LocationCard
       <div>
         <button type="button" className="text-left" onClick={onSelect}>
           <p className="eyebrow">{t(copy.location.eyebrow, locale)}</p>
-          <h3 className="display mt-6 text-[clamp(2.2rem,5vw,4.4rem)] text-ivory">
+          <h3 className="display mt-3 text-[clamp(1.5rem,3.2vw,2.4rem)] text-ivory">
             {venue.name}
           </h3>
         </button>
-        <dl className="mt-8 space-y-3 text-[0.95rem] leading-7 text-stone">
+        <dl className="mt-5 space-y-2 type-body">
           <dd>{t(venue.city, locale)}</dd>
           <dd>{t(venue.address, locale)}</dd>
           <dd>{venue.hours}</dd>
@@ -39,10 +39,10 @@ export function LocationCard({ locale, venue, selected, onSelect }: LocationCard
             <a href={`tel:${venue.phone.replace(/\s/g, "")}`}>{venue.phone}</a>
           </dd>
         </dl>
-        <p className="mt-6 max-w-md text-[0.95rem] leading-7 text-stone">
+        <p className="type-body mt-4 max-w-md">
           {t(venue.description, locale)}
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-6">
+        <div className="mt-6 flex flex-wrap items-center gap-5">
           <MagneticButton href={`/locations/${venue.slug}`}>
             {t(copy.locationUi.view, locale)} →
           </MagneticButton>
@@ -56,7 +56,7 @@ export function LocationCard({ locale, venue, selected, onSelect }: LocationCard
       </div>
       <TransitionLink
         href={`/locations/${venue.slug}`}
-        className="img-frame img-hover relative min-h-[280px] md:min-h-[420px]"
+        className="img-frame img-hover relative min-h-[220px] md:min-h-[320px]"
         aria-label={venue.name}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -138,7 +138,7 @@ export function LocationsMapBoard({ venues, locale }: { venues: LocationVenue[];
       <MoscowMap venues={venues} active={active} onSelect={setActive} />
       {current ? (
         <div className="flex flex-col justify-end">
-          <div className="img-frame relative min-h-[220px]">
+          <div className="img-frame relative min-h-[180px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               key={current.slug}

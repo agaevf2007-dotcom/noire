@@ -12,7 +12,7 @@ export default function Error({
   return (
     <div className="flex min-h-[70svh] flex-col justify-end px-[var(--space-container)] pt-40 pb-24">
       <p className="eyebrow">Error</p>
-      <h1 className="display mt-6 text-[clamp(2.8rem,9vw,7rem)] text-ivory">
+      <h1 className="display mt-4 text-[clamp(2.2rem,6vw,4rem)] text-ivory">
         Something went quiet.
       </h1>
       <p className="type-body mt-6 max-w-md text-stone">

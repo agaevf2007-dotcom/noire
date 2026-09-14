@@ -14,30 +14,30 @@ export function JournalDetail({ post }: { post: JournalPost }) {
 
   return (
     <article>
-      <Container className="pt-36 pb-12 md:pt-44">
+      <Container className="pt-28 pb-8 md:pt-32">
         <MagneticButton href="/journal" arrow="left">
           {t(copy.ui.backJournal, locale)}
         </MagneticButton>
-        <p className="eyebrow mt-10">{formatDate(post.date, locale)}</p>
+        <p className="eyebrow mt-8">{formatDate(post.date, locale)}</p>
         <SplitLines
           as="h1"
           text={post.title[locale]}
-          className="mt-6 max-w-4xl text-[clamp(2.8rem,8vw,6.5rem)] text-ivory"
+          className="mt-4 max-w-4xl text-[clamp(2.2rem,6vw,4rem)] text-ivory"
         />
       </Container>
       <Container className="pb-[var(--space-section)]">
         <ImageReveal
           src={post.image}
           alt={post.alt[locale]}
-          className="min-h-[320px] md:min-h-[560px]"
+          className="min-h-[240px] md:min-h-[380px]"
           priority
         />
-        <div className="mx-auto mt-16 max-w-2xl space-y-8 text-[1.05rem] leading-9 text-stone">
+        <div className="mx-auto mt-8 max-w-2xl space-y-5 type-body">
           {post.body[locale].map((paragraph) => (
             <p key={paragraph} data-reveal>{paragraph}</p>
           ))}
         </div>
-        <div className="mt-16">
+        <div className="mt-10">
           <MagneticButton href="/reserve" variant="solid">
             {t(copy.hero.cta, locale)} →
           </MagneticButton>

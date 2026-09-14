@@ -26,7 +26,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <div className="mb-8 flex items-center gap-4" data-reveal>
+      <div className="mb-4 flex items-center gap-4" data-reveal>
         {index ? (
           <span className="eyebrow text-stone">{index}</span>
         ) : null}
@@ -34,10 +34,10 @@ export function SectionHeading({
       </div>
       <SplitLines
         text={title}
-        className="text-[clamp(2.2rem,6.2vw,5.6rem)] text-ivory"
+        className="text-[clamp(1.65rem,3.6vw,2.6rem)] text-ivory"
       />
       {description ? (
-        <p data-reveal className="type-body mt-8 max-w-md text-stone">
+        <p data-reveal className="type-body mt-4 max-w-md">
           {description}
         </p>
       ) : null}

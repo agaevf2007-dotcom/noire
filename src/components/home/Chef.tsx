@@ -13,8 +13,8 @@ export function Chef() {
   return (
     <section className="py-[var(--space-section)]">
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="overflow-hidden lg:sticky lg:top-28">
+        <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="overflow-hidden">
             <ImageReveal
               src="/images/chef.jpg"
               alt={
@@ -22,10 +22,10 @@ export function Chef() {
                   ? "Шеф Александр Морозов"
                   : "Chef Alexander Morozov"
               }
-              className="min-h-[420px] md:min-h-[640px]"
+              className="min-h-[260px] md:min-h-[380px]"
             />
           </div>
-          <div className="lg:pt-10">
+          <div>
             <SectionHeading
               index={copy.chef.index}
               eyebrow={t(copy.chef.eyebrow, locale)}
@@ -33,20 +33,20 @@ export function Chef() {
             />
             <p
               data-reveal
-              className="mt-12 font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase tracking-[-0.03em] text-ivory"
+              className="mt-6 font-editorial text-[clamp(1.4rem,3vw,2.1rem)] uppercase tracking-[-0.03em] text-ivory"
             >
               {copy.chef.name}
             </p>
-            <p data-reveal className="mt-4 text-stone">
+            <p data-reveal className="mt-3 type-body">
               {t(copy.chef.years, locale)}
             </p>
             <p data-reveal className="mt-2 eyebrow">
               {t(copy.chef.cities, locale)}
             </p>
-            <p data-reveal className="mt-10 max-w-lg text-[1rem] leading-8 text-stone">
+            <p data-reveal className="type-body mt-5 max-w-lg">
               {t(copy.chef.body, locale)}
             </p>
-            <div className="mt-10">
+            <div className="mt-6">
               <MagneticButton href="/reserve" variant="solid">
                 {t(copy.hero.cta, locale)} →
               </MagneticButton>

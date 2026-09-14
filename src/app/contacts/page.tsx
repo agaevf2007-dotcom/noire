@@ -34,19 +34,19 @@ export default function ContactsPage() {
     "mt-2 min-h-11 w-full border-b bg-transparent py-3 text-[1rem] text-ivory outline-none focus:border-ivory";
 
   return (
-    <div className="px-[var(--space-container)] pt-36 pb-28 md:pt-44">
+    <div className="px-[var(--space-container)] pt-24 pb-16 md:pt-28">
       <p className="eyebrow">NOIRÉ</p>
-      <h1 className="display mt-4 text-[clamp(3.2rem,10vw,8rem)] text-ivory">
+      <h1 className="display mt-3 text-[clamp(2.2rem,6vw,3.8rem)] text-ivory">
         {t(venue.city, locale)}
       </h1>
-      <p className="mt-8 max-w-md text-[1.05rem] leading-8 text-stone">
+      <p className="type-body mt-4 max-w-md">
         {t(venue.address, locale)}
         <br />
         {venue.hours}
       </p>
 
-      <div className="mt-20 grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="space-y-6 text-[1rem] leading-8 text-stone">
+      <div className="mt-12 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="space-y-4 type-body">
           <p>
             <a href={`tel:${venue.phone.replace(/\s/g, "")}`}>{venue.phone}</a>
           </p>

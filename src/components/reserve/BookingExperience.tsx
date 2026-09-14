@@ -120,7 +120,7 @@ export function BookingExperience() {
     return (
       <div className="success-panel py-10">
         <p className="eyebrow">{venue.name}</p>
-        <h2 className="display mt-6 whitespace-pre-line text-[clamp(2.8rem,8vw,6.5rem)] text-ivory">
+        <h2 className="display mt-4 whitespace-pre-line text-[clamp(2rem,5vw,3.4rem)] text-ivory">
           {t(copy.pages.reserve.success, locale)}
         </h2>
         <p className="eyebrow mt-8">
@@ -167,11 +167,11 @@ export function BookingExperience() {
 
       <div key={`${step}-${dir}`} className={dir > 0 ? "step-enter" : "step-enter-back"}>
         {step === 1 ? (
-          <fieldset className="mt-12 border-0 p-0">
-            <legend className="font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase text-ivory">
+          <fieldset className="mt-8 border-0 p-0">
+            <legend className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] uppercase text-ivory">
               {t(copy.book.guestsQ, locale)}
             </legend>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               {GUESTS.map((value) => (
                 <button
                   key={value}
@@ -193,11 +193,11 @@ export function BookingExperience() {
         ) : null}
 
         {step === 2 ? (
-          <div className="mt-12">
-            <h2 className="font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase text-ivory">
+          <div className="mt-8">
+            <h2 className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] uppercase text-ivory">
               {t(copy.book.dateQ, locale)}
             </h2>
-            <div className="mt-10">
+            <div className="mt-6">
               <BookingCalendar locale={locale} selected={date} onSelect={setDate} />
             </div>
             {!date ? (
@@ -209,11 +209,11 @@ export function BookingExperience() {
         ) : null}
 
         {step === 3 ? (
-          <fieldset className="mt-12 border-0 p-0">
-            <legend className="font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase text-ivory">
+          <fieldset className="mt-8 border-0 p-0">
+            <legend className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] uppercase text-ivory">
               {t(copy.book.timeQ, locale)}
             </legend>
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {BOOKING_TIMES.map((slot) => {
                 const status = slots?.[slot as TimeSlot] ?? "unavailable";
                 const selected = time === slot;
@@ -251,11 +251,11 @@ export function BookingExperience() {
         ) : null}
 
         {step === 4 ? (
-          <div className="mt-12 max-w-xl">
-            <h2 className="font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase text-ivory">
+          <div className="mt-8 max-w-xl">
+            <h2 className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] uppercase text-ivory">
               {t(copy.book.detailsQ, locale)}
             </h2>
-            <div className="mt-10 grid gap-8">
+            <div className="mt-6 grid gap-8">
               <Field
                 label={t(copy.form.name, locale)}
                 value={details.name}
@@ -302,11 +302,11 @@ export function BookingExperience() {
         ) : null}
 
         {step === 5 ? (
-          <div className="mt-12 max-w-lg">
-            <h2 className="font-editorial text-[clamp(1.8rem,4vw,3rem)] uppercase text-ivory">
+          <div className="mt-8 max-w-lg">
+            <h2 className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] uppercase text-ivory">
               {t(copy.book.confirmQ, locale)}
             </h2>
-            <dl className="mt-10 space-y-4 text-[1.05rem] leading-8 text-stone">
+            <dl className="mt-6 space-y-4 text-[1.05rem] leading-8 text-stone">
               <div>
                 <dt className="sr-only">Venue</dt>
                 <dd className="font-editorial text-[1.8rem] uppercase text-ivory">
@@ -340,7 +340,7 @@ export function BookingExperience() {
         ) : null}
       </div>
 
-      <div className="mt-16 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
         {step > 1 ? (
           <Button onClick={() => go(step - 1)}>{t(copy.book.back, locale)}</Button>
         ) : null}

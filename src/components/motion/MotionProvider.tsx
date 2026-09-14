@@ -26,7 +26,7 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const reduced = usePrefersReducedMotion();
   const [playIntro, setPlayIntro] = useState(false);
-  const [introComplete, setIntroComplete] = useState(false);
+  const [introComplete, setIntroComplete] = useState(true);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -34,6 +34,7 @@ export function MotionProvider({ children }: { children: ReactNode }) {
     const shouldPlay = pathname === "/" && !seen && !reduced;
     setPlayIntro(shouldPlay);
     if (!shouldPlay) setIntroComplete(true);
+    else setIntroComplete(false);
   }, [pathname, reduced]);
 
   const markIntroComplete = useCallback(() => {
@@ -45,6 +46,12 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.classList.toggle("reduce-motion", reduced);
   }, [reduced]);
+
+  useEffect(() => {
+    if (!playIntro) return;
+    const id = window.setTimeout(() => markIntroComplete(), 2200);
+    return () => window.clearTimeout(id);
+  }, [playIntro, markIntroComplete]);
 
   const value = useMemo(
     () => ({

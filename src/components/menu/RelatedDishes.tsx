@@ -16,7 +16,7 @@ export function RelatedDishes({ dish }: { dish: Dish }) {
     <section className="py-[var(--space-section)]">
       <Container>
         <p className="eyebrow">{t(copy.ui.related, locale)}</p>
-        <div className="dish-grid mt-10">
+        <div className="dish-grid mt-6">
           {related.map((item) => (
             <EditorialDish key={item.slug} dish={item} locale={locale} />
           ))}

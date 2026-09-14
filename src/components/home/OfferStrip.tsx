@@ -8,14 +8,14 @@ import { useLocale } from "@/lib/locale";
 export function OfferStrip() {
   const { locale } = useLocale();
   return (
-    <section className="border-y border-line py-16">
-      <Container className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+    <section className="border-y border-line py-10 md:py-12">
+      <Container className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="eyebrow">{t(copy.offer.kicker, locale)}</p>
-          <h2 className="display mt-4 text-[clamp(2rem,5vw,4rem)] text-ivory">
+          <h2 className="display mt-3 text-[clamp(1.8rem,4vw,2.8rem)] text-ivory">
             {t(copy.offer.title, locale)}
           </h2>
-          <p className="mt-4 max-w-md text-[0.95rem] leading-7 text-stone">
+          <p className="type-body mt-3 max-w-md">
             {t(copy.offer.body, locale)}
           </p>
         </div>

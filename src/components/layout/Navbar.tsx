@@ -50,10 +50,10 @@ export function Navbar() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[padding,background-color] duration-200",
-          scrolled || open ? "bg-noir py-3" : "bg-transparent py-5",
+          scrolled || open ? "bg-noir py-3" : "bg-transparent py-3.5",
         )}
       >
-        <div className="mx-auto grid max-w-[1600px] grid-cols-[1fr_auto_1fr] items-center px-[var(--space-container)]">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center px-[var(--space-container)]">
           <TransitionLink
             href="/"
             className={cn(

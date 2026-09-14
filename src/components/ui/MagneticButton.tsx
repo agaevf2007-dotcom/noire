@@ -21,11 +21,12 @@ export function MagneticButton({
   external,
   arrow,
 }: MagneticButtonProps) {
-  const raw = typeof children === "string" ? children : "";
-  const label =
-    typeof children === "string"
-      ? children.replace(/^←\s*/, "").replace(/\s*→$/, "")
-      : children;
+  const raw = Array.isArray(children)
+    ? children.join("")
+    : typeof children === "string"
+      ? children
+      : "";
+  const label = raw.replace(/^←\s*/, "").replace(/\s*→$/, "").trim() || children;
   const dir =
     arrow ?? (raw.includes("←") ? "left" : raw.includes("→") ? "right" : "none");
 

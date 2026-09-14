@@ -19,7 +19,7 @@ export default function AboutPage() {
         lead={t(copy.pages.about.lead, locale)}
       />
       <Container className="pb-10">
-        <p className="max-w-2xl text-[1.05rem] leading-9 text-stone">
+        <p className="type-body max-w-2xl">
           {t(copy.intro.body, locale)}
         </p>
       </Container>

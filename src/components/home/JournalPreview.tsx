@@ -13,7 +13,7 @@ export function JournalPreview() {
   return (
     <section className="py-[var(--space-section)]">
       <Container>
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             index={copy.journal.index}
             eyebrow={t(copy.journal.eyebrow, locale)}
@@ -23,13 +23,12 @@ export function JournalPreview() {
             {t(copy.journal.all, locale)} →
           </MagneticButton>
         </div>
-        <div className="mt-16 grid gap-12 md:grid-cols-2">
-          {journalPosts.map((post, index) => (
+        <div className="mt-8 grid gap-8 sm:grid-cols-2">
+          {journalPosts.map((post) => (
             <JournalCard
               key={post.slug}
               post={post}
               locale={locale}
-              featured={index === 0}
             />
           ))}
         </div>

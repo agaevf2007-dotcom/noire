@@ -10,12 +10,12 @@ export default function LocationsPage() {
 
   return (
     <>
-      <div className="px-[var(--space-container)] pt-36 pb-16 md:pt-44">
+      <div className="px-[var(--space-container)] pt-24 pb-8 md:pt-28">
         <p className="eyebrow">05</p>
-        <h1 className="display mt-4 text-[clamp(3rem,10vw,7.5rem)] text-ivory">
+        <h1 className="display mt-3 text-[clamp(2.1rem,5.5vw,3.6rem)] text-ivory">
           {t(copy.pages.locations.title, locale)}
         </h1>
-        <p className="mt-8 max-w-lg text-[1rem] leading-8 text-stone">
+        <p className="type-body mt-4 max-w-lg">
           {t(copy.pages.locations.lead, locale)}
         </p>
       </div>

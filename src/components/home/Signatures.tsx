@@ -14,7 +14,7 @@ export function Signatures() {
   return (
     <section className="py-[var(--space-section)]">
       <Container>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             index={copy.signatures.index}
             eyebrow={t(copy.signatures.eyebrow, locale)}
@@ -22,7 +22,7 @@ export function Signatures() {
           />
           <MagneticButton href="/menu">{t(copy.ui.exploreMenu, locale)} →</MagneticButton>
         </div>
-        <div className="dish-grid mt-16">
+        <div className="dish-grid mt-8">
           {featuredDishes.map((dish) => (
             <EditorialDish key={dish.slug} dish={dish} locale={locale} />
           ))}

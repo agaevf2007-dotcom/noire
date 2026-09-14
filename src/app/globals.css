@@ -4,15 +4,16 @@
   --noir: #0a0a0a;
   --noir-elevated: #111111;
   --noir-soft: #181818;
-  --ivory: #f1eee8;
-  --stone: #a8a39a;
+  --ivory: #f3f0ea;
+  --stone: #d6d0c6;
+  --stone-dim: #a8a198;
   --wine: #5c1a24;
   --wine-soft: #7a2431;
   --line: rgba(241, 238, 232, 0.12);
-  --space-container: clamp(1.25rem, 4vw, 5rem);
-  --space-section: clamp(5rem, 12vw, 10rem);
-  --space-block: clamp(2.5rem, 6vw, 5rem);
-  --nav-height: 5.5rem;
+  --space-container: clamp(1.2rem, 3vw, 3rem);
+  --space-section: clamp(2.5rem, 5.5vw, 4.5rem);
+  --space-block: clamp(1.75rem, 4vw, 3rem);
+  --nav-height: 4.5rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -22,6 +23,7 @@
   --color-noir-soft: var(--noir-soft);
   --color-ivory: var(--ivory);
   --color-stone: var(--stone);
+  --color-stone-dim: var(--stone-dim);
   --color-wine: var(--wine);
   --color-wine-soft: var(--wine-soft);
   --color-line: var(--line);
@@ -49,8 +51,10 @@ body {
   color: var(--ivory);
   cursor: auto;
   font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0.01em;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
 }
 
@@ -95,30 +99,31 @@ img {
   font-family: var(--font-cormorant), Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 0.92;
+  line-height: 0.98;
   text-transform: uppercase;
 }
 
 .type-hero {
-  font-size: clamp(3.2rem, 10.5vw, 8.2rem);
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
 }
 
 .type-page {
-  font-size: clamp(2.6rem, 8vw, 6.2rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
 }
 
 .type-section {
-  font-size: clamp(2.2rem, 6.2vw, 5.6rem);
+  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
 }
 
 .type-large {
-  font-size: clamp(1.02rem, 1.5vw, 1.15rem);
-  line-height: 1.85;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
 }
 
 .type-body {
-  font-size: 0.95rem;
-  line-height: 1.85;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--stone);
 }
 
 .type-ui {
@@ -148,11 +153,11 @@ img {
 
 .eyebrow {
   font-family: var(--font-manrope), system-ui, sans-serif;
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-dim);
 }
 
 .img-frame {
@@ -214,6 +219,10 @@ img {
   transition: transform 0.55s var(--ease-out);
 }
 
+.btn-solid {
+  color: var(--noir);
+}
+
 .btn-magnetic:hover .btn-arrow {
   transform: translateX(5px);
 }
@@ -240,44 +249,39 @@ img {
   display: none;
 }
 
-html:not(.reduce-motion) [data-reveal],
-html:not(.reduce-motion) [data-reveal-image] {
-  opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity 0.4s var(--ease-out),
-    transform 0.4s var(--ease-out);
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-html:not(.reduce-motion) [data-reveal].is-in,
-html:not(.reduce-motion) [data-reveal-image].is-in {
-  opacity: 1;
-  transform: none;
+@keyframes split-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+html:not(.reduce-motion) [data-reveal],
+html:not(.reduce-motion) [data-reveal-image] {
+  animation: reveal-in 0.45s var(--ease-out) both;
 }
 
 html:not(.reduce-motion) [data-split-line],
 html:not(.reduce-motion) [data-hero-line] {
   display: block;
-  transform: translateY(110%);
-  transition: transform 0.7s var(--ease-out);
-}
-
-html:not(.reduce-motion) [data-split-line].is-in,
-html:not(.reduce-motion) [data-hero-line].is-in {
-  transform: translateY(0);
+  animation: split-in 0.55s var(--ease-out) both;
 }
 
 html:not(.reduce-motion) [data-hero-meta] {
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.45s var(--ease-out) 0.16s,
-    transform 0.45s var(--ease-out) 0.16s;
-}
-
-html:not(.reduce-motion) [data-hero-meta].is-in {
-  opacity: 1;
-  transform: none;
+  animation: reveal-in 0.45s var(--ease-out) 0.1s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -385,10 +389,8 @@ html:not(.reduce-motion) [data-hero-meta].is-in {
 
 .dish-card {
   content-visibility: auto;
-  contain-intrinsic-size: 560px;
+  contain-intrinsic-size: 360px;
   background: var(--noir-elevated);
-  border: 1px solid var(--line);
-  border-radius: 1.15rem;
   overflow: hidden;
   height: 100%;
 }
@@ -427,7 +429,7 @@ html:not(.reduce-motion) [data-hero-meta].is-in {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.1rem 1.1rem 1.25rem;
+  padding: 1rem 0 0.25rem;
 }
 
 .dish-card-composition {

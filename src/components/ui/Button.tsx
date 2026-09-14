@@ -34,7 +34,7 @@ export function Button({
 
 export function buttonClass(variant: "ghost" | "line" | "solid" = "line") {
   const base =
-    "inline-flex items-center gap-3 text-[0.72rem] tracking-[0.22em] uppercase transition-[color,background-color,border-color,opacity,transform] duration-300 active:opacity-70 disabled:opacity-40";
+    "inline-flex min-h-11 items-center gap-3 text-[0.72rem] tracking-[0.22em] uppercase transition-[color,background-color,border-color,opacity,transform] duration-300 active:opacity-70 disabled:opacity-40";
 
   if (variant === "ghost") {
     return cn(base, "text-ivory hover:text-stone");
@@ -43,7 +43,7 @@ export function buttonClass(variant: "ghost" | "line" | "solid" = "line") {
   if (variant === "solid") {
     return cn(
       base,
-      "bg-ivory text-noir px-6 py-3 hover:bg-stone",
+      "btn-solid bg-ivory px-6 py-3 text-[var(--noir)] hover:bg-stone",
     );
   }
 

@@ -17,6 +17,13 @@ export function Loader() {
     const root = rootRef.current;
     if (!root) return;
 
+    const finish = () => {
+      document.body.style.overflow = "";
+      markIntroComplete();
+    };
+
+    const safety = window.setTimeout(finish, 1800);
+
     const { gsap } = registerGsap();
     const logo = root.querySelector("[data-loader-logo]");
     const line = root.querySelector("[data-loader-line]");
@@ -27,8 +34,8 @@ export function Loader() {
     const tl = gsap.timeline({
       defaults: { ease: easeCinematic },
       onComplete: () => {
-        document.body.style.overflow = "";
-        markIntroComplete();
+        window.clearTimeout(safety);
+        finish();
       },
     });
 
@@ -50,6 +57,7 @@ export function Loader() {
       );
 
     return () => {
+      window.clearTimeout(safety);
       tl.kill();
       document.body.style.overflow = "";
     };

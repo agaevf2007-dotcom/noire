@@ -7,7 +7,7 @@ import { useLocale } from "@/lib/locale";
 export function NotFoundView() {
   const { locale } = useLocale();
   return (
-    <div className="flex min-h-[80svh] flex-col justify-end px-[var(--space-container)] pt-40 pb-24">
+    <div className="flex min-h-[70svh] flex-col justify-end px-[var(--space-container)] pt-32 pb-16">
       <p className="eyebrow">404</p>
       <h1 className="display type-hero mt-6 text-ivory">
         {t(copy.pages.notFound.title, locale)}

@@ -36,7 +36,7 @@ export function Hero() {
   }, [introComplete, reduced, locale]);
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-noir">
+    <section className="relative min-h-[76svh] overflow-hidden bg-noir md:min-h-[82svh]">
       <div className="absolute inset-0">
         <SafeImage
           src={site.images.hero}
@@ -52,9 +52,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.35)_0%,rgba(10,10,10,0.55)_45%,rgba(10,10,10,0.92)_100%)]" />
       </div>
 
-      <div className="relative flex min-h-[100svh] flex-col justify-end px-[var(--space-container)] pb-16 pt-32 md:pb-20">
+      <div className="relative flex min-h-[76svh] flex-col justify-end px-[var(--space-container)] pb-10 pt-24 md:min-h-[82svh] md:pb-12">
         <div ref={textRef}>
-          <p className="overflow-hidden font-editorial text-[clamp(1.1rem,2vw,1.5rem)] tracking-[0.28em] text-ivory">
+          <p className="overflow-hidden font-editorial text-[clamp(1rem,1.6vw,1.25rem)] tracking-[0.22em] text-ivory">
             <span data-hero-line className="block">
               {brand.name}
             </span>
@@ -63,14 +63,14 @@ export function Hero() {
             as="h1"
             scroll={false}
             text={t(copy.hero.title, locale)}
-            className="mt-6 max-w-5xl text-[clamp(3.2rem,10.5vw,8.2rem)] text-ivory"
+            className="mt-4 max-w-4xl text-[clamp(2.6rem,8vw,5.5rem)] text-ivory"
           />
         </div>
 
         <div
           ref={metaRef}
           data-hero-meta
-          className="mt-12 flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between"
+          className="mt-8 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between"
         >
           <p className="eyebrow">{t(copy.hero.kicker, locale)}</p>
           <div>

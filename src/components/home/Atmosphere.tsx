@@ -12,8 +12,8 @@ export function Atmosphere() {
   return (
     <section className="py-[var(--space-section)]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5 lg:pt-16">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-5">
             <SectionHeading
               index={copy.atmosphere.index}
               eyebrow={t(copy.atmosphere.eyebrow, locale)}
@@ -29,7 +29,7 @@ export function Atmosphere() {
                   ? "Зал ресторана NOIRÉ вечером"
                   : "NOIRÉ dining room in the evening"
               }
-              className="min-h-[360px] md:min-h-[640px]"
+              className="min-h-[240px] md:min-h-[340px]"
               sizes="(min-width: 1024px) 58vw, 100vw"
             />
           </div>
@@ -41,11 +41,11 @@ export function Atmosphere() {
                   ? "Интерьер NOIRÉ, детали зала"
                   : "Interior details of the NOIRÉ dining room"
               }
-              className="min-h-[240px] md:min-h-[380px]"
+              className="min-h-[200px] md:min-h-[280px]"
               sizes="(min-width: 1024px) 33vw, 100vw"
             />
           </div>
-          <div className="lg:col-span-5 lg:col-start-8 lg:mt-12">
+          <div className="lg:col-span-5 lg:col-start-8">
             <ImageReveal
               src="/images/location.jpg"
               alt={

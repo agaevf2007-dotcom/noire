@@ -2,7 +2,6 @@
 
 import { Container } from "@/components/layout/Container";
 import { DishGallery } from "@/components/menu/DishGallery";
-import { IngredientExperience } from "@/components/menu/IngredientExperience";
 import { RelatedDishes } from "@/components/menu/RelatedDishes";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SafeImage } from "@/components/ui/SafeImage";
@@ -19,7 +18,7 @@ export function DishDetail({ dish }: { dish: Dish }) {
 
   return (
     <>
-      <section className="relative min-h-[100svh] overflow-hidden">
+      <section className="relative min-h-[58svh] overflow-hidden">
         <div className="absolute inset-0">
           <SafeImage
             src={dish.image}
@@ -33,7 +32,7 @@ export function DishDetail({ dish }: { dish: Dish }) {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.28)_0%,rgba(10,10,10,0.18)_40%,rgba(10,10,10,0.86)_100%)]" />
         </div>
 
-        <div className="relative z-10 flex min-h-[100svh] flex-col justify-between px-[var(--space-container)] pt-28 pb-12 md:pt-32 md:pb-16">
+        <div className="relative z-10 flex min-h-[58svh] flex-col justify-between px-[var(--space-container)] pt-24 pb-8 md:pt-28 md:pb-10">
           <div className="flex items-start justify-between gap-6">
             <MagneticButton href="/menu" arrow="left">
               {t(copy.ui.backMenu, locale)}
@@ -45,7 +44,7 @@ export function DishDetail({ dish }: { dish: Dish }) {
 
           <div className="max-w-4xl">
             <p className="eyebrow mb-4 md:hidden">{getCategoryLabel(dish.category, locale)}</p>
-            <h1 className="display text-[clamp(2.6rem,9vw,7.2rem)] text-ivory">
+            <h1 className="display text-[clamp(2.2rem,6vw,4.4rem)] text-ivory">
               {title.lead}
               {title.rest ? (
                 <>
@@ -54,7 +53,7 @@ export function DishDetail({ dish }: { dish: Dish }) {
                 </>
               ) : null}
             </h1>
-            <p className="mt-6 max-w-md text-[1rem] leading-8 text-stone">
+            <p className="type-body mt-4 max-w-md">
               {dish.summary[locale]}
             </p>
             <p className="mt-5 text-[0.95rem] tracking-[0.14em] text-ivory">{dish.price}</p>
@@ -62,16 +61,16 @@ export function DishDetail({ dish }: { dish: Dish }) {
         </div>
       </section>
 
-      <Container className="grid gap-16 py-[var(--space-section)] lg:grid-cols-[1.1fr_0.9fr]">
+      <Container className="grid gap-10 py-[var(--space-section)] lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p data-reveal className="max-w-xl text-[1.05rem] leading-9 text-stone">
+          <p className="type-body max-w-xl">
             {dish.description[locale]}
           </p>
           {dish.chefChoice ? (
             <p className="eyebrow mt-8 text-ivory/70">{t(copy.ui.chefsChoice, locale)}</p>
           ) : null}
         </div>
-        <div className="grid gap-12 border-t border-line pt-10 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
+        <div className="grid gap-8 border-t border-line pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
           <div>
             <p className="eyebrow">{t(copy.ui.composition, locale)}</p>
             <ul className="mt-5 space-y-3">
@@ -112,13 +111,12 @@ export function DishDetail({ dish }: { dish: Dish }) {
         </div>
       </Container>
 
-      <IngredientExperience dish={dish} />
       <DishGallery dish={dish} />
 
       <section className="px-[var(--space-container)] py-[var(--space-section)]">
         <p className="eyebrow">{t(copy.ui.chefNote, locale)}</p>
-        <blockquote className="mt-10 max-w-3xl">
-          <p className="font-editorial text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] text-ivory">
+        <blockquote className="mt-6 max-w-3xl">
+          <p className="font-editorial text-[clamp(1.4rem,3vw,2.2rem)] leading-[1.25] text-ivory">
             “{dish.chefNote[locale]}”
           </p>
           <footer className="eyebrow mt-8 text-stone">— Alexander Morozov</footer>
@@ -129,7 +127,7 @@ export function DishDetail({ dish }: { dish: Dish }) {
 
       <section className="border-t border-line py-[var(--space-section)]">
         <Container className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-          <h2 className="display max-w-xl whitespace-pre-line text-[clamp(2.4rem,6vw,4.8rem)] text-ivory">
+          <h2 className="display max-w-xl whitespace-pre-line text-[clamp(1.8rem,4vw,3rem)] text-ivory">
             {t(copy.reserveCta.title, locale)}
           </h2>
           <MagneticButton href="/reserve" variant="solid">

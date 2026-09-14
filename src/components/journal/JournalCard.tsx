@@ -13,7 +13,7 @@ type JournalCardProps = {
 
 export function JournalCard({ post, locale, featured }: JournalCardProps) {
   return (
-    <article className={featured ? "md:col-span-2" : undefined} data-reveal>
+    <article className={featured ? "md:col-span-2" : undefined}>
       <TransitionLink
         href={`/journal/${post.slug}`}
         className="group block"
@@ -22,8 +22,8 @@ export function JournalCard({ post, locale, featured }: JournalCardProps) {
         <div
           className={
             featured
-              ? "img-frame relative min-h-[320px] md:min-h-[520px]"
-              : "img-frame relative min-h-[240px] md:min-h-[320px]"
+              ? "img-frame relative min-h-[220px] md:min-h-[280px]"
+              : "img-frame relative min-h-[200px] md:min-h-[240px]"
           }
         >
           <SafeImage
@@ -32,11 +32,11 @@ export function JournalCard({ post, locale, featured }: JournalCardProps) {
             className="h-full w-full object-cover"
           />
         </div>
-        <p className="eyebrow mt-6">{formatDate(post.date, locale)}</p>
-        <h3 className="mt-3 font-editorial text-[clamp(1.6rem,3vw,2.6rem)] uppercase tracking-[-0.03em] text-ivory">
+        <p className="eyebrow mt-4">{formatDate(post.date, locale)}</p>
+        <h3 className="mt-2 font-editorial text-[clamp(1.35rem,2.4vw,1.9rem)] uppercase tracking-[-0.03em] text-ivory">
           {post.title[locale]}
         </h3>
-        <p className="mt-4 max-w-md text-[0.92rem] leading-7 text-stone">
+        <p className="type-body mt-2 max-w-md text-[0.98rem]">
           {post.excerpt[locale]}
         </p>
       </TransitionLink>

@@ -11,7 +11,7 @@ type PageIntroProps = {
 
 export function PageIntro({ eyebrow, title, lead }: PageIntroProps) {
   return (
-    <Container className="pt-36 pb-16 md:pt-44 md:pb-24">
+    <Container className="pt-24 pb-8 md:pt-28 md:pb-10">
       {eyebrow ? (
         <p className="eyebrow mb-6" data-reveal suppressHydrationWarning>
           {eyebrow}
@@ -20,12 +20,12 @@ export function PageIntro({ eyebrow, title, lead }: PageIntroProps) {
       <SplitLines
         as="h1"
         text={title}
-        className="text-[clamp(3rem,10vw,7.5rem)] text-ivory"
+        className="text-[clamp(2.1rem,5.5vw,3.6rem)] text-ivory"
       />
       {lead ? (
         <p
           data-reveal
-          className="mt-8 max-w-lg text-[1rem] leading-8 text-stone"
+          className="type-body mt-5 max-w-lg"
           suppressHydrationWarning
         >
           {lead}

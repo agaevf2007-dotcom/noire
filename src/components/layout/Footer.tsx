@@ -12,16 +12,18 @@ export function Footer() {
 
   return (
     <footer className="border-t border-line bg-noir">
-      <Container className="py-[var(--space-section)]">
-        <p className="display text-[clamp(4rem,16vw,14rem)] text-ivory" data-reveal>
-          {brand.name}
-        </p>
-        <p className="mt-6 max-w-xl font-editorial text-[clamp(1.4rem,3vw,2.4rem)] uppercase leading-none tracking-[-0.03em] text-stone">
-          {t(brand.slogan, locale)}
-        </p>
+      <Container className="py-12 md:py-16">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <p className="display text-[clamp(2rem,5vw,3.2rem)] text-ivory">
+            {brand.name}
+          </p>
+          <p className="type-body max-w-sm">
+            {t(brand.slogan, locale)}
+          </p>
+        </div>
 
-        <div className="mt-20 grid gap-12 md:grid-cols-4">
-          <ul className="space-y-3 text-[0.8rem] tracking-[0.18em] uppercase text-ivory">
+        <div className="mt-10 grid gap-10 border-t border-line pt-10 md:grid-cols-4">
+          <ul className="space-y-2 text-[0.8rem] tracking-[0.16em] uppercase text-ivory">
             <li>
               <a href={site.social.instagram} target="_blank" rel="noreferrer">
                 Instagram
@@ -49,11 +51,11 @@ export function Footer() {
             </li>
           </ul>
 
-          <div className="text-[0.95rem] leading-8 text-stone">
+          <div className="type-body">
             <p>{t(venue.city, locale)}</p>
             <p>{t(venue.address, locale)}</p>
             <p>{venue.hours}</p>
-            <p className="mt-4">
+            <p className="mt-3">
               <a href={`tel:${venue.phone.replace(/\s/g, "")}`}>{venue.phone}</a>
             </p>
           </div>
@@ -61,9 +63,7 @@ export function Footer() {
           <NewsletterForm />
 
           <div className="md:text-right">
-            <p className="text-[0.8rem] tracking-[0.16em] uppercase text-stone">
-              {copy.footer.legal}
-            </p>
+            <p className="eyebrow">{copy.footer.legal}</p>
           </div>
         </div>
       </Container>

@@ -8,15 +8,15 @@ export default function ReservePage() {
   const { locale } = useLocale();
 
   return (
-    <div className="px-[var(--space-container)] pt-36 pb-28 md:pt-44">
+    <div className="px-[var(--space-container)] pt-24 pb-16 md:pt-28">
       <p className="eyebrow">{venue.name}</p>
-      <h1 className="display mt-4 whitespace-pre-line text-[clamp(3.2rem,10vw,8rem)] text-ivory">
+      <h1 className="display mt-3 whitespace-pre-line text-[clamp(2.1rem,5.5vw,3.6rem)] text-ivory">
         {t(copy.pages.reserve.title, locale)}
       </h1>
-      <p className="mt-6 max-w-md text-[1rem] leading-8 text-stone">
+      <p className="type-body mt-4 max-w-md">
         {t(copy.pages.reserve.lead, locale)}
       </p>
-      <div className="mt-16 max-w-5xl">
+      <div className="mt-10 max-w-5xl">
         <BookingExperience />
       </div>
     </div>

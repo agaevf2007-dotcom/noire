@@ -60,15 +60,15 @@ export function MenuExperience() {
 
   return (
     <>
-      <header className="px-[var(--space-container)] pt-36 pb-16 md:pt-44 md:pb-24">
+      <header className="px-[var(--space-container)] pt-24 pb-7 md:pt-28 md:pb-8">
         <p className="eyebrow" data-reveal>
           NOIRÉ
         </p>
-        <h1 className="display mt-4 text-[clamp(3.4rem,12vw,9rem)] text-ivory">MENU</h1>
-        <p data-reveal className="mt-8 max-w-md text-[1rem] leading-8 text-stone" suppressHydrationWarning>
+        <h1 className="display mt-3 text-[clamp(2.2rem,6vw,3.8rem)] text-ivory">MENU</h1>
+        <p data-reveal className="type-body mt-4 max-w-md" suppressHydrationWarning>
           {t(copy.pages.menu.lead, locale)}
         </p>
-        <p data-reveal className="eyebrow mt-8 text-ivory/80" suppressHydrationWarning>
+        <p data-reveal className="eyebrow mt-5 text-ivory/80" suppressHydrationWarning>
           {t(copy.pages.menu.service, locale)}
         </p>
       </header>

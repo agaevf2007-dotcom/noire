@@ -18,7 +18,7 @@ export default function JournalPage() {
         lead={t(copy.pages.journal.lead, locale)}
       />
       <Container className="pb-[var(--space-section)]">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {journalPosts.map((post, index) => (
             <JournalCard
               key={post.slug}
@@ -28,7 +28,7 @@ export default function JournalPage() {
             />
           ))}
         </div>
-        <div className="mt-16">
+        <div className="mt-10">
           <MagneticButton href="/reserve" variant="solid">
             {t(copy.hero.cta, locale)} →
           </MagneticButton>

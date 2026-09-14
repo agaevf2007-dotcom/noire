@@ -13,7 +13,7 @@ export function LocationDetail({ venue }: { venue: LocationVenue }) {
 
   return (
     <>
-      <section className="relative min-h-[70svh] overflow-hidden">
+      <section className="relative min-h-[56svh] overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset(venue.image)}
@@ -21,20 +21,20 @@ export function LocationDetail({ venue }: { venue: LocationVenue }) {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.2),rgba(10,10,10,0.82))]" />
-        <div className="relative z-10 flex min-h-[70svh] flex-col justify-end px-[var(--space-container)] pb-16 pt-36">
+        <div className="relative z-10 flex min-h-[56svh] flex-col justify-end px-[var(--space-container)] pb-10 pt-28">
           <p className="eyebrow">{t(venue.city, locale)}</p>
-          <h1 className="display mt-4 text-[clamp(2.8rem,8vw,6.5rem)] text-ivory">
+          <h1 className="display mt-3 text-[clamp(2.2rem,6vw,4rem)] text-ivory">
             {venue.name}
           </h1>
         </div>
       </section>
 
-      <Container className="grid gap-16 py-[var(--space-section)] lg:grid-cols-[1.1fr_0.9fr]">
+      <Container className="grid gap-10 py-[var(--space-section)] lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="max-w-xl text-[1.05rem] leading-9 text-stone">
+          <p className="type-body max-w-xl">
             {t(venue.description, locale)}
           </p>
-          <dl className="mt-12 space-y-3 text-[1rem] leading-8 text-stone">
+          <dl className="mt-6 space-y-2 type-body">
             <dd>{t(venue.address, locale)}</dd>
             <dd>{venue.hours}</dd>
             <dd>

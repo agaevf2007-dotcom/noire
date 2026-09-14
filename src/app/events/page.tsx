@@ -53,12 +53,12 @@ export default function EventsPage() {
 
   return (
     <>
-      <div className="px-[var(--space-container)] pt-36 pb-16 md:pt-44">
+      <div className="px-[var(--space-container)] pt-24 pb-8 md:pt-28">
         <p className="eyebrow">07</p>
-        <h1 className="display mt-4 text-[clamp(3rem,10vw,7.5rem)] text-ivory">
+        <h1 className="display mt-3 text-[clamp(2.2rem,6vw,3.8rem)] text-ivory">
           {t(copy.pages.events.title, locale)}
         </h1>
-        <p className="mt-8 max-w-lg text-[1rem] leading-8 text-stone">
+        <p className="type-body mt-4 max-w-lg">
           {t(copy.pages.events.lead, locale)}
         </p>
       </div>
@@ -67,7 +67,7 @@ export default function EventsPage() {
         {TYPES.map((item) => (
           <li
             key={item.id}
-            className="border-t border-line py-6 font-editorial text-[clamp(1.6rem,4vw,2.6rem)] uppercase text-ivory"
+            className="border-t border-line py-4 font-editorial text-[clamp(1.3rem,3vw,1.9rem)] uppercase text-ivory"
           >
             {t(copy.eventsList[item.key], locale)}
           </li>
@@ -76,7 +76,7 @@ export default function EventsPage() {
 
       <div className="no-scrollbar flex gap-4 overflow-x-auto px-[var(--space-container)] pb-16">
         {GALLERY.map((src) => (
-          <div key={src} className="img-frame relative h-[46vh] w-[80vw] shrink-0 md:w-[36vw]">
+          <div key={src} className="img-frame relative h-[32vh] w-[72vw] shrink-0 md:w-[28vw]">
             <SafeImage
               src={src}
               alt={locale === "ru" ? "Зал NOIRÉ" : "The NOIRÉ dining room"}
